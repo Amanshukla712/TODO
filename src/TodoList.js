@@ -18,9 +18,13 @@ const TodoList = () => {
   }, [tasks]);
 
   const addTask = () => {
-    if (inputValue.trim() !== '') {
-      setTasks([...tasks, { text: inputValue, completed: false }]);
+    const trimmedValue = inputValue.trim();
+    if (trimmedValue !== '') {
+      setTasks([...tasks, { text: trimmedValue, completed: false }]);
       setInputValue('');
+    } else {
+
+      alert('Please enter a non-empty task.');
     }
   };
 
